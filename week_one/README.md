@@ -72,3 +72,64 @@ Map<String, int> myMap = {"one": 1, "two": 2, "three": 3};
 In the example above, `myNumber` is an `int`, `myDouble` is a `double`, `myString` is a `String`, `myBool` is a `bool`, `myNumbers` is a `List` of `int` values, and `myMap` is a `Map` with keys of type `String` and values of type `int`.
 
 By using types and type annotations, you can make your code more robust and less prone to errors, and also make it easier for others to understand and maintain your code.
+
+#### Dart - Numbers - Integers and Doubles:
+
+In Dart, numbers can be either integers (whole numbers) or doubles (decimal numbers). To declare an integer, use the int keyword. For example: int myInt = 42;. To declare a double, use the double keyword. For example:
+
+```dart
+double myDouble = 3.14;.
+```
+
+#### Dart - Booleans:
+
+Booleans are a type of variable that can only have one of two values: true or false. In Dart, you can declare a boolean using the bool keyword. For example:
+
+```dart
+bool myBool = true;
+```
+
+#### Dart - Const and Final Keywords:
+
+The const and final keywords are used to declare variables that can't be changed after they are set. The const keyword is used for values that are known at compile-time, while the final keyword is used for values that are determined at run-time. Here is an example of using const and final keywords:
+
+```dart
+const pi = 3.14; // This is a compile-time constant
+final name = 'John'; // This is a run-time constant
+```
+
+#### Dart - Concatenation:
+
+Concatenation is the process of joining two or more strings together. In Dart, you can concatenate strings using the + operator. For example:
+
+```dart
+String message = "Hello " + "world!";.
+```
+
+#### Dart Operators - Arithmetic:
+
+Dart supports all the basic arithmetic operators, including +, -, \*, /, and % (remainder or modulo). For example:
+
+```dart
+int a = 5;
+int b = 3;
+int c = a + b; // 8
+int d = a * b; // 15
+double e = a / b; // 1.6666666666666667
+int f = a % b; // 2
+```
+
+#### Equality and Relational Operators in Dart:
+
+Dart also has operators for comparing values, such as == (equals), != (not equals), > (greater than), < (less than), >= (greater than or equal to), and <= (less than or equal to). For example:
+
+```dart
+int a = 5;
+int b = 3;
+bool isEqual = a == b; // false
+bool isNotEqual = a != b; // true
+bool isGreater = a > b; // true
+bool isLess = a < b; // false
+bool isGreaterOrEqual = a >= b; // true
+bool isLessOrEqual = a <= b; // false
+```
