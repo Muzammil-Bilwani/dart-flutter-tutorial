@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main() {
   print("Grocery Bill");
   print("============");
@@ -6,9 +8,15 @@ void main() {
   double beansPrice = 3.99;
   double breadPrice = 2.49;
 
-  int riceQuantity = 2;
-  int beansQuantity = 3;
-  int breadQuantity = 2;
+  print("Enter Rice Quantity: ");
+  String riceInput = stdin.readLineSync() as String;
+  int riceQuantity = int.parse(riceInput);
+  print("Enter Bean Quantity: ");
+  String beanInput = stdin.readLineSync() as String;
+  int beansQuantity = int.parse(beanInput);
+  print("Enter Bread Quantity: ");
+  String breadInput = stdin.readLineSync() as String;
+  int breadQuantity = int.parse(breadInput);
 
   double riceTotal = ricePrice * riceQuantity;
   double anotherRiceTotal = anotherRicePrice * riceQuantity;
