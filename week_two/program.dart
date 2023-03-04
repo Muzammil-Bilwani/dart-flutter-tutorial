@@ -62,4 +62,29 @@ void main() {
     print(j);
     j++;
   } while (j < 1);
+
+  // // Dart - Functions:
+  addTwoNumber(1, 2);
+  addTwoNumber(3, 3);
+  addTwoNumber(4, 1);
+  giveAverage(1, 2, 3);
+  getBonusMarks(5);
+  getBonusMarks(5, totalMarks: 20);
+}
+
+void addTwoNumber(int a, int b) => print(a + b);
+
+void giveAverage(int a, int b, int c) {
+  int sum = a + b + c;
+  double average = sum / 3;
+  print(average);
+}
+
+int getBonusMarks(
+  int marks, {
+  int totalMarks = 10,
+}) {
+  int bonusMarks = totalMarks - marks;
+  print(bonusMarks);
+  return bonusMarks;
 }
