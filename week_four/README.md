@@ -1,0 +1,113 @@
+## Object Oriented Programming - Intermediate - Inheritance Concepts
+
+- Introduction to Inheritance with Dart
+- Creating Classes and Inheritance Tree
+- Override Methods
+- Inheriting Classes with Constructors
+
+### Introduction to Inheritance with Dart
+
+Inheritance is a concept in Object Oriented Programming that allows us to create a new class from an existing class. This new class is called a subclass or child class and the existing class is called a superclass or parent class. The subclass inherits all the properties and methods of the superclass. Inheritance is a way to reuse code.
+
+In Dart, we can create a subclass by using the `extends` keyword. The subclass inherits all the properties and methods of the superclass. The subclass can also override the properties and methods of the superclass.
+
+```dart
+class Animal {
+  String name;
+  int age;
+
+  void eat() {
+    print('$name is eating.');
+  }
+}
+
+class Dog extends Animal {
+  String breed;
+
+  void bark() {
+    print('$name is barking.');
+  }
+}
+```
+
+In this example, we have a Animal class with a name and age property and an eat() method. We also have a Dog class that extends Animal and adds a breed property and a bark() method. The Dog class inherits the name and age properties and the eat() method from Animal.
+
+### Creating Classes and Inheritance Tree
+
+To create a class in Dart, you use the class keyword followed by the name of the class. Here's an example:
+
+```dart
+class Person {
+  String name;
+  int age;
+
+  void sayHello() {
+    print('Hello, my name is $name.');
+  }
+}
+```
+
+In this example, we have a Person class with a name and age property and a sayHello() method that prints a greeting.
+
+To create an inheritance tree, you can use the extends keyword followed by the name of the superclass. Here's an example:
+
+```dart
+class Student extends Person {
+  String major;
+
+  void sayMajor() {
+    print('My major is $major.');
+  }
+}
+```
+
+In this example, we have a Student class that extends Person and adds a major property and a sayMajor() method that prints the student's major. The Student class inherits the name, age, and sayHello() method from Person.
+
+### Override Methods
+
+Sometimes you may want to override a method in a subclass to provide a different implementation. To do this in Dart, you can simply define a method with the same name as the superclass method. Here's an example:
+
+```dart
+class Animal {
+  void makeSound() {
+    print('The animal makes a sound.');
+  }
+}
+
+class Dog extends Animal {
+  void makeSound() {
+    print('The dog barks.');
+  }
+}
+```
+
+In this example, we have an Animal class with a makeSound() method that prints a generic sound. We also have a Dog class that extends Animal and overrides the makeSound() method to print a specific sound for a dog.
+
+### Inheriting Classes with Constructors
+
+When you create a subclass that inherits from a superclass, the subclass also inherits the superclass constructor. You can use the super keyword to call the superclass constructor from the subclass constructor. Here's an example:
+
+```dart
+class Person {
+  String name;
+  int age;
+
+  Person(this.name, this.age);
+
+  void sayHello() {
+    print('Hello, my name is $name.');
+  }
+}
+
+class Student extends Person {
+  String major;
+
+  Student(String name, int age, this.major) : super(name, age);
+
+  void sayMajor() {
+    print('My major is $major.');
+  }
+}
+```
+
+In this example, we have a Person class with a constructor that takes a name and age parameter. We also have a Student class that extends Person and adds a major property. The Student class has its own constructor that takes a name, age, and major parameter. In the Student constructor, we call the superclass constructor using super(name, age) to set the name and age properties of the Person class.
