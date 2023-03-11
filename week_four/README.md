@@ -7,6 +7,8 @@
 
 ### Introduction to Inheritance with Dart
 
+<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190501121513/inheritance.png" />
+
 Inheritance is a concept in Object Oriented Programming that allows us to create a new class from an existing class. This new class is called a subclass or child class and the existing class is called a superclass or parent class. The subclass inherits all the properties and methods of the superclass. Inheritance is a way to reuse code.
 
 In Dart, we can create a subclass by using the `extends` keyword. The subclass inherits all the properties and methods of the superclass. The subclass can also override the properties and methods of the superclass.
@@ -111,6 +113,10 @@ class Student extends Person {
 ```
 
 In this example, we have a Person class with a constructor that takes a name and age parameter. We also have a Student class that extends Person and adds a major property. The Student class has its own constructor that takes a name, age, and major parameter. In the Student constructor, we call the superclass constructor using super(name, age) to set the name and age properties of the Person class.
+
+_An Example Image_
+
+<img src="https://raw.githubusercontent.com/Muzammil-Bilwani/dart-flutter-tutorial/main/week_four/inheritance.png"/>
 
 ### Exercise
 

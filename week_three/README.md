@@ -7,6 +7,12 @@
 - Named and Sugar Syntactic Constructors - Part 2
 - Setters and Getters
 
+<br/>
+
+<img src="https://a5theory.com/wp-content/uploads/2017/05/class-object.png" style="border-radius:10px" />
+
+<br/>
+
 #### Dart - Introduction to Classes and Objects, Introduction to Class Creation and Instance Variable and Adding Methods to Classes
 
 In Dart, a class is a blueprint for creating objects. An object is an instance of a class that has its own set of properties and methods.
