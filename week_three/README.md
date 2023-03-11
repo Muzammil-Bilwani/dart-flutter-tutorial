@@ -151,6 +151,15 @@ class Person {
   Person(this.name, this.age);
 
   void printInfo() {
+    print("Name: $name");
+    print("Age: $age");
+  }
+}
+
+void main() {
+  var person = Person("John", 30);
+  person.printInfo();
+}
 
 ```
 
