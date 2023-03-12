@@ -33,7 +33,6 @@ class Employee {
   Employee(this.name, this.age, this.baseSalary, this.gender);
 
   void printInfo() {
-    Person pr = Person();
     print('Name: $name');
   }
 
