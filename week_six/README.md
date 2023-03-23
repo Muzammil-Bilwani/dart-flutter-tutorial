@@ -180,7 +180,6 @@ Iterate through the List of Person objects and print the names and ages of the p
 - [ ] Create a map that associates the names of fruits with their prices. Find the most expensive fruit in the map.
 - [ ] Create a list of strings and remove all duplicates from the list.
 - [ ] Create a map that associates the names of programming languages with their release dates. Find the programming language with the oldest release date.
-- [ ] Create a list of maps, where each map represents a book with a title and author. Print out only the titles of the books.
 - [ ] Create a list of integers and find the product of all numbers in the list.
 
 ## Assignment Questions
