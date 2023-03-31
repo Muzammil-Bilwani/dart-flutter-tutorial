@@ -15,6 +15,13 @@ void main() {
 
 List<int> findPair(List<int> numbers, int target) {
   // Your code here
-
-  return [2, 5];
+  var complements = <int, int>{};
+  for (var i = 0; i < numbers.length; i++) {
+    var complement = target - numbers[i];
+    if (complements.containsKey(complement)) {
+      return [numbers[complements[complement]], numbers[i]];
+    }
+    complements[numbers[i]] = i;
+  }
+  return null;
 }
