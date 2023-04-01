@@ -4,7 +4,6 @@
 // For example, given the list [1, 2, 3, 4, 5] and a target value of 7,
 // the function should return [2, 5], since 2 + 5 = 7 and
 // 2 and 5 have lower indices than any other pair that adds up to 7 in the list.
-
 void main() {
   List<int> numbers = [1, 2, 3, 4, 5];
   int target = 7;
@@ -15,6 +14,16 @@ void main() {
 
 List<int> findPair(List<int> numbers, int target) {
   // Your code here
+  
+  for(int i=0;i<=numbers.length;i++){
+   for(int j=1;j<=numbers.length;j++){
+     if(i+j==target){
+       print("pair is $i , $j");
+       break;
+     }
+   }
+  }
 
   return [2, 5];
 }
+
