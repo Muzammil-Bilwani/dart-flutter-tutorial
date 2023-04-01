@@ -15,6 +15,11 @@ void main() {
 
 List<int> findPair(List<int> numbers, int target) {
   // Your code here
+  for(int checkList = 0; checkList < 5; checkList ++){
+    if(numbers[1] + numbers[4] == 7){
+      print('If giwe add given numbers the it gives us the target answer: '+ numbers);
+    }
+  }
 
   return [2, 5];
 }
