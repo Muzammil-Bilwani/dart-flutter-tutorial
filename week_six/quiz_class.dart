@@ -14,7 +14,7 @@ void main() {
 }
 
 List<int> findPair(List<int> numbers, int target) {
-  // Your code here
+  print("Just Check");
 
   return [2, 5];
 }
