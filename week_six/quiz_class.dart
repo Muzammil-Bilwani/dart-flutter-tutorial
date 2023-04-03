@@ -15,6 +15,19 @@ void main() {
 
 List<int> findPair(List<int> numbers, int target) {
   // Your code here
-
+  // Previous inccorect code 
+  // for(int i in numbers){
+  //  if(numbers[i] + numbers[i+1]  ==target){
+  //    print([numbers[i],numbers[i+1]]);
+  //  }
+  // }
+  
+    for (int i = 0; i < numbers.length; i++)
+        for (int a = i + 1; a < numbers.length; a++){
+            if(numbers[i] + numbers[a] == target){ 
+              print([numbers[i],numbers[a]]);
+                                                 }
+        }
+  
   return [2, 5];
 }
