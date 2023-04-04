@@ -3,7 +3,7 @@
 
 // For example, given the list [1, 2, 3, 4, 5] and a target value of 7,
 // the function should return [2, 5], since 2 + 5 = 7 and
-// 2 and 5 have lower indices than any other pair that adds up to 7 in the list.
+// 2 and 5 have lower indices than any other pair that adds up to 7 in the list..
 
 void main() {
   List<int> numbers = [1, 2, 3, 4, 5];
