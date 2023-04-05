@@ -14,7 +14,10 @@ void main() {
 }
 
 List<int> findPair(List<int> numbers, int target) {
-  // Your code here
+   if (numbers.lenght==target){
+     int result = target;
+     return (result);
+   }
 
   return [2, 5];
 }
