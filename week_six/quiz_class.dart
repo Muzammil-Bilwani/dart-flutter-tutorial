@@ -14,7 +14,15 @@ void main() {
 }
 
 List<int> findPair(List<int> numbers, int target) {
-  // Your code here
+   Map<int, int> complements = {};
+    for (int i = 0; i < numbers.length; i++) {
+      int complement = target - numbers[i];
+      if (complements.containsKey(complement)) {
+        return [complement, numbers[i]];
+      }
+      complements[numbers[i]] = i;
+    }
+    return [2 , 5];
+  }
 
-  return [2, 5];
-}
+
