@@ -6,7 +6,7 @@
 // 2 and 5 have lower indices than any other pair that adds up to 7 in the list.
 
 void main() {
-  List<int> numbers = [1, 2, 3, 4, 5];
+  List<int> numbers = [1, 3, 4, 5, 2];
   int target = 7;
 
   List<int> result = (findPair(numbers, target));
@@ -15,6 +15,16 @@ void main() {
 
 List<int> findPair(List<int> numbers, int target) {
   // Your code here
-
-  return [2, 5];
+  List<List<int>> pairs = [];
+  numbers.sort();
+  for (int outerIndex = 0; outerIndex < numbers.length; outerIndex++) {
+    for (int innerIndex = outerIndex + 1;
+        innerIndex < numbers.length;
+        innerIndex++) {
+      if (numbers[outerIndex] + numbers[innerIndex] == target) {
+        pairs.add([numbers[outerIndex], numbers[innerIndex]]);
+      }
+    }
+  }
+  return pairs[0];
 }
