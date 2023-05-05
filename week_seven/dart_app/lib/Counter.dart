@@ -14,15 +14,32 @@ class _CounterState extends State<Counter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: ElevatedButton(
-            child: Text(
-              number.toString(),
-              style: TextStyle(fontSize: 24),
-            ),
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        IconButton(
+            onPressed: () => {
+                  setState(() {
+                    number--;
+                  })
+                },
+            icon: const Icon(
+              Icons.remove,
+              size: 50,
+            )),
+        Text(number.toString(), style: const TextStyle(fontSize: 90)),
+        IconButton(
             onPressed: () => {
                   setState(() {
                     number++;
                   })
-                }));
+                },
+            icon: const Icon(
+              Icons.add,
+              size: 50,
+            )),
+      ],
+    ));
   }
 }

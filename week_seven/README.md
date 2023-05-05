@@ -6,10 +6,8 @@
 - Formatting Our Code
 - Little Material Design Presentation
 - Flutter Scaffold Widget and Properties
-- Flutter InkWell Widget and Event Listeners
 - Flutter Gesture Detector Widget - Creating a Custom Button
 - Flutter Bottom Navigator and Add a Tap
-- Flutter Floating Action Button
 
 ### Setup Flutter
 
@@ -203,3 +201,170 @@ Scaffold(
 ```
 
 This code creates a new Scaffold widget with an AppBar widget that displays the app's title, a body that displays a welcome message, a floating action button that displays an add icon, a drawer that displays a menu with two items, and a bottom navigation bar with three items. The properties of each widget are defined using various Text and Widget Properties, which can be customized as needed.
+
+### Creating a Custom Button Using Gesture Detector
+
+Flutter's Gesture Detector widget provides support for handling gestures, such as taps, swipes, and drags. Here's an example of how you can use Gesture Detector to create a custom button:
+
+```dart
+import 'package:flutter/material.dart';
+
+class CustomButton extends StatefulWidget {
+  final String buttonText;
+  final VoidCallback onPressed;
+  final Color buttonColor;
+  final Color textColor;
+
+  CustomButton({
+    Key key,
+    @required this.buttonText,
+    @required this.onPressed,
+    this.buttonColor = Colors.blue,
+    this.textColor = Colors.white,
+  }) : super(key: key);
+
+  @override
+  _CustomButtonState createState() => _CustomButtonState();
+}
+
+class _CustomButtonState extends State<CustomButton> {
+  Color _buttonColor;
+  Color _textColor;
+
+  @override
+  void initState() {
+    _buttonColor = widget.buttonColor;
+    _textColor = widget.textColor;
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (_) {
+        setState(() {
+          _buttonColor = Colors.blue[900];
+          _textColor = Colors.white;
+        });
+      },
+      onTapUp: (_) {
+        setState(() {
+          _buttonColor = widget.buttonColor;
+          _textColor = widget.textColor;
+        });
+      },
+      onTapCancel: () {
+        setState(() {
+          _buttonColor = widget.buttonColor;
+          _textColor = widget.textColor;
+        });
+      },
+      onTap: widget.onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+          color: _buttonColor,
+          borderRadius: BorderRadius.circular(5.0),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        child: Text(
+          widget.buttonText,
+          style: TextStyle(
+            color: _textColor,
+            fontWeight: FontWeight.bold,
+            fontSize: 16.0,
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Here's how you can use the CustomButton widget:
+
+```dart
+  CustomButton(
+    buttonText: 'Sign in',
+    onPressed: () {
+      // Do something when the button is pressed
+    },
+    buttonColor: Colors.blue,
+    textColor: Colors.white,
+  )
+```
+
+### Adding a Tap to a Bottom Navigator
+
+Flutter's Bottom Navigation Bar widget provides a simple way to create a bottom navigation bar in your app. Here's an example of how you can add a tap to a bottom navigator:
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+  final List<Widget> _pages = [
+    Page1(),
+    Page2(),
+    Page3(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My App'),
+      ),
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Page 1',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Page 2',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Page 3',
+          ),
+        ],
+        ),
+      );
+    }
+  }
+```
+
+In this example, we have created a `MyHomePage` widget with a bottom navigation bar that has three items. The `currentIndex` property is used to keep track of the currently selected item. The `onTap` callback is called when an item is tapped and it updates the `_selectedIndex` variable, which triggers a rebuild of the widget.
+
+The `items` property of the `BottomNavigationBar` widget is a list of `BottomNavigationBarItem` widgets, each representing an item in the navigation bar. The `icon` property specifies the icon for the item, and the `label` property specifies the text label.
+
+When an item is tapped, the `_onItemTapped` function is called with the index of the selected item as an argument. This function updates the `_selectedIndex` variable and triggers a rebuild of the widget. The `_pages` list contains the pages that are displayed in the body of the widget, and the selected page is displayed based on the value of `_selectedIndex`.
+
+That's it! You can customize the icons and labels of the navigation bar items to fit your app's needs.
+
+### App - Build a Quotes App - Part 1
+
+#### Example Designs
+
+<img src="https://cdn.dribbble.com/users/839742/screenshots/4581855/dribbble_quote_generator.png"/>
+
+<br/>
+<br/>
+<br/>
+
+<img src="https://cdn.dribbble.com/users/5576/screenshots/3526312/media/167f21bdbc3290e484081baef7229b0b.png?compress=1&resize=400x300" width="100%"/>
