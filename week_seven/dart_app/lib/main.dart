@@ -1,4 +1,5 @@
 import 'package:dart_app/Home.dart';
+import 'package:dart_app/QuotesPage.dart';
 import 'package:dart_app/ScaffoldLearn.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ScafoldLearn(),
+      home: const QuotesPage(),
     );
   }
 }

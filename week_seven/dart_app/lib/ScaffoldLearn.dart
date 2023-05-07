@@ -1,3 +1,4 @@
+import 'package:dart_app/Lion_Button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -18,8 +19,9 @@ class ScafoldLearn extends StatelessWidget {
         onPressed: () {
           // Add your code here
         },
+        backgroundColor: Colors.white,
         elevation: 120,
-        child: Icon(Icons.home),
+        child: LionButton(),
       ),
       drawer: Drawer(
         child: ListView(
@@ -47,7 +49,7 @@ class ScafoldLearn extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 2,
+        currentIndex: 0,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
