@@ -1,6 +1,7 @@
 import 'package:dart_app/Home.dart';
 import 'package:dart_app/QuotesPage.dart';
 import 'package:dart_app/ScaffoldLearn.dart';
+import 'package:dart_app/TipCalculator/TipCalculator.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,9 +18,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: const QuotesPage(),
+      home: const TipCalculator(),
     );
   }
 }
