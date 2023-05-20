@@ -1,8 +1,7 @@
+import 'package:dart_app/TipCalculator/CustomTip.dart';
 import 'package:dart_app/TipCalculator/Result.dart';
-import 'package:dart_app/model/Bill.dart';
+import 'package:dart_app/model/bill.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class TipCalculator extends StatefulWidget {
   const TipCalculator({Key? key}) : super(key: key);
@@ -17,6 +16,20 @@ class _TipCalculatorState extends State<TipCalculator> {
   calculateTip(double percentage) {
     bill.tipAmount = bill.totalAmount * percentage / 100;
     setState(() {});
+  }
+
+  openCustomTip(context) {
+    showModalBottomSheet(
+        context: context,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))),
+        isScrollControlled: true,
+        builder: (builder) {
+          return Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
+              child: CustomTip(bill: bill));
+        }).then((value) => {setState(() {})});
   }
 
   @override
@@ -64,7 +77,11 @@ class _TipCalculatorState extends State<TipCalculator> {
                       calculateTip(25);
                     },
                     child: Text("25%")),
-                ElevatedButton(onPressed: () {}, child: Text("Custom Tip"))
+                ElevatedButton(
+                    onPressed: () {
+                      openCustomTip(context);
+                    },
+                    child: Text("Custom Tip"))
               ],
             ),
             const Padding(

@@ -1,7 +1,5 @@
-import 'package:dart_app/model/Bill.dart';
+import 'package:dart_app/model/bill.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ResultTip extends StatelessWidget {
   const ResultTip({Key? key, required this.bill}) : super(key: key);
