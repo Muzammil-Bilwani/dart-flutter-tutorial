@@ -2,6 +2,8 @@ import 'package:dart_app/Counter.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
+  const Home({Key? key, required this.number}) : super(key: key);
+  final int number;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,6 +11,9 @@ class Home extends StatelessWidget {
           title: const Text("First Page"),
           centerTitle: false,
         ),
-        body: const Center(child: Counter()));
+        body: Center(
+            child: Counter(
+          number: number,
+        )));
   }
 }

@@ -1,5 +1,8 @@
 import 'package:dart_app/Home.dart';
+import 'package:dart_app/Index.dart';
 import 'package:dart_app/QuotesPage.dart';
+import 'package:dart_app/RoutingLearning.dart';
+import 'package:dart_app/RoutingLearning2.dart';
 import 'package:dart_app/ScaffoldLearn.dart';
 import 'package:dart_app/TipCalculator/TipCalculator.dart';
 import 'package:dart_app/colors/TipsyColor.dart';
@@ -25,7 +28,16 @@ class MyApp extends StatelessWidget {
             headline4: TextStyle(
                 color: Color(0xFF168954), fontWeight: FontWeight.bold),
           )),
-      home: const TipCalculator(),
+      routes: {
+        '/': (context) => const Index(),
+        '/tip-calculator': (context) => const TipCalculator(),
+        '/quote-app': (context) => const QuotesPage(),
+        '/counter': (context) => Home(
+              number: ModalRoute.of(context)?.settings.arguments as int,
+            ),
+        '/routing-learning': (context) => const RoutingLearning(),
+        '/routing-learning-two': (context) => const RoutingLearningTwo()
+      },
     );
   }
 }

@@ -3,14 +3,21 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class Counter extends StatefulWidget {
-  const Counter({Key? key}) : super(key: key);
-
+  Counter({Key? key, required this.number}) : super(key: key);
+  final int number;
   @override
   State<Counter> createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
   int number = 1;
+
+  @override
+  void initState() {
+    number = widget.number;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
