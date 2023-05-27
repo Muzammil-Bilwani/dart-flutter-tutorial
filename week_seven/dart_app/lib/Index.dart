@@ -13,6 +13,11 @@ class Index extends StatelessWidget {
               child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Image.network(
+            "https://banoqabil.pk/media/logo.png",
+            width: 120,
+          ),
+          Image.asset("assets/signature.png"),
           ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/tip-calculator');
