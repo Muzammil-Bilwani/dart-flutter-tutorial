@@ -15,29 +15,41 @@ class Index extends StatelessWidget {
         children: [
           Image.network(
             "https://banoqabil.pk/media/logo.png",
-            width: 120,
+            width: 220,
           ),
-          Image.asset("assets/signature.png"),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/tip-calculator');
-              },
-              child: const Text("Tip Calculator")),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/quote-app');
-              },
-              child: const Text("Quote Page")),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/counter', arguments: 4);
-              },
-              child: const Text("Counter")),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/routing-learning');
-              },
-              child: const Text("Routing Learning")),
+          const Padding(padding: EdgeInsets.all(16)),
+          const Text(
+            "Flutter Course",
+            style: TextStyle(fontSize: 32),
+          ),
+          Padding(
+              padding: const EdgeInsets.all(16),
+              child: Wrap(
+                spacing: 16,
+                crossAxisAlignment: WrapCrossAlignment.start,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/tip-calculator');
+                      },
+                      child: const Text("Tip Calculator")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/quote-app');
+                      },
+                      child: const Text("Quote Page")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/counter', arguments: 4);
+                      },
+                      child: const Text("Counter")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/routing-learning');
+                      },
+                      child: const Text("Routing Learning")),
+                ],
+              ))
         ],
       ))),
     );
