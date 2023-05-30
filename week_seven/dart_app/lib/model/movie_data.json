@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Inception",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+    "imdbRating": 8.8,
+    "genre": ["Sci-Fi", "Action"],
+    "playbackTime": 148
+  },
+  {
+    "title": "The Dark Knight",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg",
+    "imdbRating": 9.0,
+    "genre": ["Action", "Crime", "Drama"],
+    "playbackTime": 152
+  },
+  {
+    "title": "Interstellar",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
+    "imdbRating": 8.6,
+    "genre": ["Sci-Fi", "Adventure", "Drama"],
+    "playbackTime": 169
+  },
+  {
+    "title": "Dilwale Dulhania Le Jayenge",
+    "imageUrl": "https://example.com/dilwale_dulhania_le_jayenge.jpg",
+    "imdbRating": 8.1,
+    "genre": ["Romance", "Drama", "Musical"],
+    "playbackTime": 190
+  },
+  {
+    "title": "Kabhi Khushi Kabhie Gham",
+    "imageUrl": "https://example.com/kabhi_khushi_kabhie_gham.jpg",
+    "imdbRating": 7.5,
+    "genre": ["Drama", "Romance"],
+    "playbackTime": 210
+  },
+  {
+    "title": "Pulp Fiction",
+    "imageUrl": "https://example.com/pulp_fiction.jpg",
+    "imdbRating": 8.9,
+    "genre": ["Crime", "Drama"],
+    "playbackTime": 154
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "imageUrl": "https://example.com/shawshank_redemption.jpg",
+    "imdbRating": 9.3,
+    "genre": ["Drama"],
+    "playbackTime": 142
+  }
+]

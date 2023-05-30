@@ -48,6 +48,11 @@ class Index extends StatelessWidget {
                         Navigator.pushNamed(context, '/routing-learning');
                       },
                       child: const Text("Routing Learning")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/movie');
+                      },
+                      child: const Text("Movie App")),
                 ],
               ))
         ],

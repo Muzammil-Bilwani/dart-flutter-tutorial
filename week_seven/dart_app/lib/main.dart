@@ -1,9 +1,9 @@
-import 'package:dart_app/Home.dart';
+import 'package:dart_app/counter/Home.dart';
 import 'package:dart_app/Index.dart';
-import 'package:dart_app/QuotesPage.dart';
-import 'package:dart_app/RoutingLearning.dart';
-import 'package:dart_app/RoutingLearning2.dart';
-import 'package:dart_app/ScaffoldLearn.dart';
+import 'package:dart_app/movie_app/MovieHome.dart';
+import 'package:dart_app/quotes/QuotesPage.dart';
+import 'package:dart_app/random/RoutingLearning.dart';
+import 'package:dart_app/random/RoutingLearning2.dart';
 import 'package:dart_app/TipCalculator/TipCalculator.dart';
 import 'package:dart_app/colors/TipsyColor.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +36,8 @@ class MyApp extends StatelessWidget {
               number: ModalRoute.of(context)?.settings.arguments as int,
             ),
         '/routing-learning': (context) => const RoutingLearning(),
-        '/routing-learning-two': (context) => const RoutingLearningTwo()
+        '/routing-learning-two': (context) => const RoutingLearningTwo(),
+        '/movie': (context) => const MovieHome(),
       },
     );
   }

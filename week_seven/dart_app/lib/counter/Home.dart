@@ -1,4 +1,4 @@
-import 'package:dart_app/Counter.dart';
+import 'package:dart_app/counter/Counter.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
