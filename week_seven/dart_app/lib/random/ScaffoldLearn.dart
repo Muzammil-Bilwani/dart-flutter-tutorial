@@ -1,7 +1,5 @@
 import 'package:dart_app/random/Lion_Button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ScafoldLearn extends StatelessWidget {
   const ScafoldLearn({Key? key}) : super(key: key);
@@ -10,9 +8,9 @@ class ScafoldLearn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My App'),
+        title: const Text('My App'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Welcome to my app!'),
       ),
       floatingActionButton: FloatingActionButton(
@@ -21,7 +19,7 @@ class ScafoldLearn extends StatelessWidget {
         },
         backgroundColor: Colors.white,
         elevation: 120,
-        child: LionButton(),
+        child: const LionButton(),
       ),
       drawer: Drawer(
         child: ListView(

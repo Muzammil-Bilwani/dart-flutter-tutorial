@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
-  Counter({Key? key, required this.number}) : super(key: key);
+  const Counter({Key? key, required this.number}) : super(key: key);
   final int number;
   @override
   State<Counter> createState() => _CounterState();
