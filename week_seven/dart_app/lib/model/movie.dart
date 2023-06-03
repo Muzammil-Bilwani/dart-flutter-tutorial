@@ -76,4 +76,8 @@ class Movie {
           playbackTime: item["playbackTime"] as int));
     }
   }
+
+  getPlayBackTime() {
+    return '${playbackTime ~/ 60}h ${playbackTime % 60}m';
+  }
 }

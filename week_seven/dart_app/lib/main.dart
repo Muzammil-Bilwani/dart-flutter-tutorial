@@ -1,5 +1,7 @@
 import 'package:dart_app/counter/Home.dart';
 import 'package:dart_app/Index.dart';
+import 'package:dart_app/model/movie.dart';
+import 'package:dart_app/movie_app/MovieDetails.dart';
 import 'package:dart_app/movie_app/MovieHome.dart';
 import 'package:dart_app/quotes/QuotesPage.dart';
 import 'package:dart_app/random/RoutingLearning.dart';
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
         '/routing-learning': (context) => const RoutingLearning(),
         '/routing-learning-two': (context) => const RoutingLearningTwo(),
         '/movie': (context) => const MovieHome(),
+        '/movie/details': (context) => MovieDetails(
+            movie: ModalRoute.of(context)?.settings.arguments as Movie),
       },
     );
   }
