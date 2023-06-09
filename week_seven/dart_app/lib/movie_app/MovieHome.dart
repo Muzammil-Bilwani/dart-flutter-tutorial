@@ -1,4 +1,5 @@
 import 'package:dart_app/movie_app/MovieListHome.dart';
+import 'package:dart_app/movie_app/tickets/Tickets.dart';
 import 'package:flutter/material.dart';
 
 class MovieHome extends StatefulWidget {
@@ -12,7 +13,7 @@ class _MovieHomeState extends State<MovieHome> {
   List<Widget> tabBar = [
     const MovieListHome(),
     const Text("WORK IN PROGRESS"),
-    const Text("WORK IN PROGRESS"),
+    const Tickets(),
     const Text("WORK IN PROGRESS")
   ];
   int currentIndex = 0;
