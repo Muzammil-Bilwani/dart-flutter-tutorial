@@ -19,6 +19,8 @@ class Actor extends Person {
     return [
       actor1,
       actor2,
+      actor3,
+      actor4,
     ];
   }
 }

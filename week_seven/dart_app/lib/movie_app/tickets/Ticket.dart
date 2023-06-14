@@ -1,5 +1,4 @@
 import 'package:dart_app/model/movie.dart';
-import 'package:dart_app/movie_app/Rating.dart';
 import 'package:flutter/material.dart';
 
 class Ticket extends StatelessWidget {
