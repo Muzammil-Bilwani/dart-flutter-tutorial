@@ -237,3 +237,23 @@ Useful Links:
 
 UX design Case studies:
 https://growth.design/case-studies
+
+### Class Project
+
+#### Mortgage Calculator
+
+<img src="https://cdn.dribbble.com/users/593304/screenshots/9933822/media/dae3d949ab01dbc188bb8434bc0cd02d.png?compress=1&resize=1600x1200&vertical=center" />
+
+Colors:
+
+- #c7a7f3
+- #f1f3fa
+- #090817
+- #9d72e9
+- #9b9eae
+- #734d8a
+- #413b5c
+
+Fonts:
+
+- Poppins
