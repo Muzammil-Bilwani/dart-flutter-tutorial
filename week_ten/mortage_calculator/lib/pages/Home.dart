@@ -28,7 +28,6 @@ class _HomeState extends State<Home> {
     Mortgage.mortgage.downPayment = double.parse(downPaymentController.text);
     Mortgage.mortgage.interestRate = double.parse(interestRateController.text);
     Mortgage.mortgage.lengthOfLoan = double.parse(selectedYears);
-
     Navigator.pushNamed(context, '/result');
   }
 
