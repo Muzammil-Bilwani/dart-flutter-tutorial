@@ -257,3 +257,128 @@ Colors:
 Fonts:
 
 - Poppins
+
+## API Integration in Flutter
+
+- Whats is an API?
+  API stands for Application Programming Interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it.
+
+- What is REST API?
+  REST determines how the API looks like. It stands for “Representational State Transfer”. It is a set of rules that developers follow when they create their API. One of these rules states that you should be able to get a piece of data (called a resource) when you link to a specific URL.
+
+- What is JSON?
+  JSON stands for JavaScript Object Notation. It is a way to store information in an organized, easy-to-access manner. In a nutshell, it gives us a human-readable collection of data that we can access in a really logical manner. It can be used with modern programming languages. It is the most common data format used for asynchronous browser/server communication.
+
+- What is an API call?
+  An API call is the process that takes place after the API is set up and ready to go. It is the way a client gets the information from the API. It is basically a request for information from a web server.
+
+- What is an API endpoint?
+  An endpoint is one end of a communication channel. When an API interacts with another system, the touchpoints of this communication are considered endpoints. For APIs, an endpoint can include a URL of a server or service. Each endpoint is the location from which APIs can access the resources they need to carry out their function.
+
+- What is an API key?
+  An API key is a unique identifier that you generate using the Google Cloud Console. API keys are used to track and control how the API is being used, for example to prevent malicious use or abuse of the API. The API key is used to track API requests associated with your project for quota and billing.
+
+- What is an API request?
+  An API request is a call to the API asking for specific information to be delivered.
+
+- What is an API response?
+  An API response is the answer the API sends back to the client.
+
+- What is an API client?
+  An API client is a set of tools that allow you to make API calls. It can be a website, a mobile app, a console app, or anything that can consume an API.
+
+- What is an API server?
+  An API server is a server that is used to provide data to other applications. It is a set of routines, protocols, and tools for building software applications. It determines how the API is structured and how it should be called.
+
+- What is an API wrapper?
+  An API wrapper is an API client that are commonly used to wrap the API into easy to use functions by doing the API calls itself.
+
+- What is an API proxy?
+  An API proxy is a server that acts as a middleman between the client and the API server. It can be used to add extra security to the API or to cache the responses.
+
+- What is an API gateway?
+  An API gateway is a server that is the single entry point into the system. It is similar to the proxy but it has extra functionalities like authentication, rate limiting, caching, etc.
+
+### Flutter HTTP Package
+
+- The `http` package is used to make HTTP requests in Flutter.
+
+```dart
+// Example
+import 'package:http/http.dart' as http;
+```
+
+### Making a GET Request
+
+- The `get()` method of the `http` package is used to make a GET request.
+
+```dart
+// Example
+http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
+```
+
+### Handling the Response
+
+- The `get()` method of the `http` package returns a `Future` object that contains a `Response` object.
+
+```dart
+// Example
+http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
+```
+
+- The `body` property of the `Response` class is used to get the body of the response.
+
+```dart
+// Example
+http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1')).then((response) {
+  print(response.body);
+});
+```
+
+### Parsing JSON
+
+- The `jsonDecode()` method of the `dart:convert` package is used to parse JSON.
+
+```dart
+// Example
+import 'dart:convert';
+
+http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1')).then((response) {
+  print(jsonDecode(response.body));
+});
+```
+
+## What is Future?
+
+- A `Future` is used to represent a potential value, or error, that will be available at some time in the future.
+
+### What is FutureBuilder?
+
+- A `FutureBuilder` is a widget that is used to build itself based on the latest snapshot of interaction with a `Future`.
+
+### What is Async and Await?
+
+- The `async` and `await` keywords are used to work with asynchronous code in Dart.
+
+Example:
+
+```dart
+// Example
+Future<void> main() async {
+  print('Fetching user order...');
+  print(await createOrderMessage());
+}
+
+Future<String> createOrderMessage() async {
+  var order = await fetchUserOrder();
+  return 'Your order is: $order';
+}
+
+Future<String> fetchUserOrder() =>
+    // Imagine that this function is
+    // more complex and slow.
+    Future.delayed(
+      const Duration(seconds: 2),
+      () => 'Large Latte',
+    );
+```
