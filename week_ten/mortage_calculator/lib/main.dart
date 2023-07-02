@@ -3,6 +3,7 @@ import 'package:mortage_calculator/colors/OtherColors.dart';
 import 'package:mortage_calculator/colors/Purple.dart';
 import 'package:mortage_calculator/pages/Home.dart';
 import 'package:mortage_calculator/pages/Result.dart';
+import 'package:mortage_calculator/pages/Weather.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,7 +56,8 @@ class MyApp extends StatelessWidget {
             )),
       ),
       routes: {
-        '/': (context) => const Home(),
+        '/': (context) => const Weather(),
+        '/home': (context) => const Home(),
         '/result': (context) => const Result(),
       },
     );

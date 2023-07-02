@@ -1,12 +1,9 @@
+// ignore_for_file: cast_from_null_always_fails
+
 class Bank {
   List<BankAccount> accounts = [];
 
   void addAccount(BankAccount account) {
-    BankAccount? acc = accounts.firstWhere(
-      (element) => element.accountNumber == account.accountNumber,
-      orElse: () => null as BankAccount,
-    );
-
     accounts.add(account);
   }
 

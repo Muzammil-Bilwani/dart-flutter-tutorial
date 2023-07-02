@@ -7,7 +7,6 @@ import 'package:dart_app/quotes/QuotesPage.dart';
 import 'package:dart_app/random/RoutingLearning.dart';
 import 'package:dart_app/random/RoutingLearning2.dart';
 import 'package:dart_app/TipCalculator/TipCalculator.dart';
-import 'package:dart_app/colors/TipsyColor.dart';
 import 'package:flutter/material.dart';
 
 void main() {

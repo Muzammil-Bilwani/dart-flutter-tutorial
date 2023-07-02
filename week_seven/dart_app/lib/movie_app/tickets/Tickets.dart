@@ -10,10 +10,8 @@ class Tickets extends StatefulWidget {
 }
 
 class _TicketsState extends State<Tickets> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
   @override
   void initState() {
-    _tabController = TabController(length: 2, vsync: this);
     super.initState();
   }
 
@@ -25,9 +23,9 @@ class _TicketsState extends State<Tickets> with SingleTickerProviderStateMixin {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
                   "My Tickets",
                   style: TextStyle(color: Colors.white, fontSize: 32),

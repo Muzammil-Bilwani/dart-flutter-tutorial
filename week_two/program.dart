@@ -26,8 +26,8 @@ void main() {
   }
 
   bool isRaining = true;
+  // ignore: dead_code
   if (!isRaining) {
-    print("You can go out");
   } else {
     print("You can't go out");
   }
