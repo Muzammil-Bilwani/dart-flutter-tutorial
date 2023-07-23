@@ -2,19 +2,17 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-String API_KEY = "hmqFByH6O44G0GglflGJzGr7JjNgwC61";
+const String BASE_URL = "https://bilwani-weather-api.fly.dev/";
 
 class HttpRequest {
-  Future get(int key) async {
-    String url =
-        'http://dataservice.accuweather.com/currentconditions/v1/$key?apikey=$API_KEY&details=true';
+  Future getWeather(location) async {
+    String url = '${BASE_URL}weather/$location';
     var response = await http.get(Uri.parse(url));
     return jsonDecode(response.body);
   }
 
-  Future getLocations(String query) async {
-    String url =
-        'http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=$API_KEY&q=$query';
+  Future getLocations() async {
+    String url = '${BASE_URL}locations';
     var response = await http.get(Uri.parse(url));
     return jsonDecode(response.body);
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mortage_calculator/colors/OtherColors.dart';
 import 'package:mortage_calculator/colors/Purple.dart';
 import 'package:mortage_calculator/pages/Home.dart';
+import 'package:mortage_calculator/pages/Quacks.dart';
 import 'package:mortage_calculator/pages/Result.dart';
 import 'package:mortage_calculator/pages/Weather.dart';
 
@@ -57,6 +58,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => const Weather(),
+        '/quacks': (context) => const Quacks(),
+        '/weather': (context) => const Weather(),
         '/home': (context) => const Home(),
         '/result': (context) => const Result(),
       },

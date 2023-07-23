@@ -1,7 +1,13 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:mortage_calculator/model/http_request.dart';
+import 'package:mortage_calculator/model/weather.dart';
+
+const WeatherCondition = {
+  "SUNNY": "Sunny",
+  "CLOUDY": "Cloudy",
+  "RAINY": "Rainy",
+  "SNOWY": "Snowy"
+};
 
 class Weather extends StatefulWidget {
   const Weather({super.key});
@@ -13,78 +19,118 @@ class Weather extends StatefulWidget {
 class _WeatherState extends State<Weather> {
   bool isLoading = false;
   List<String> locations = <String>[];
-  List<dynamic> locationsList = <dynamic>[];
+  int selectedCity = 0;
   int key = 0;
+  WeatherModel weather = WeatherModel("", "", 0, 0);
 
   @override
   void initState() {
     super.initState();
+    getLocations();
   }
 
-  void callAPI(String val) async {
-    var result = await HttpRequest().getLocations(val);
-    print(result.map((e) => e).toList());
-    List<String> response = result.map((e) => e['LocalizedName']).toList();
-    print(response);
+  void getLocations() async {
+    var result = await HttpRequest().getLocations();
     setState(() {
-      locationsList = result.map((e) => e).toList();
-      locations = response;
+      locations = result["data"].cast<String>();
+      isLoading = false;
     });
-    // setState(() {
-    //   isLoading = false;
-    // });
   }
 
   void getWeather() async {
     setState(() {
       isLoading = true;
     });
-    var result = await HttpRequest().get(key);
+    var result = await HttpRequest().getWeather(key);
     print(result);
+    weather = WeatherModel(result["condition"], result["description"],
+        result["humidity"], result["temperature"]);
     setState(() {
       isLoading = false;
     });
   }
 
+  String getImage() {
+    if (weather.condition == WeatherCondition["SUNNY"]) {
+      return "assets/sun.png";
+    } else if (weather.condition == WeatherCondition["CLOUDY"]) {
+      return "assets/cloud.png";
+    } else if (weather.condition == WeatherCondition["RAINY"]) {
+      return "assets/rain.png";
+    } else if (weather.condition == WeatherCondition["SNOWY"]) {
+      return "assets/snow.png";
+    } else {
+      return "";
+    }
+  }
+
+  void changeCity() {
+    setState(() {
+      if (selectedCity == locations.length - 1) {
+        selectedCity = 0;
+      } else {
+        selectedCity++;
+      }
+    });
+    getWeather();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xFF151645),
         body: SafeArea(
             child: Padding(
                 padding: const EdgeInsets.all(12),
-                child: isLoading
+                child: isLoading && locations.isNotEmpty
                     ? const Center(
                         child: CircularProgressIndicator(),
                       )
-                    : Column(
+                    : Center(
+                        child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Autocomplete<String>(
-                            fieldViewBuilder: (context, textEditingController,
-                                    focusNode, onFieldSubmitted) =>
-                                TextField(
-                              controller: textEditingController,
-                              onChanged: (val) =>
-                                  {if (val.length > 5) callAPI(val)},
-                            ),
-                            optionsBuilder:
-                                (TextEditingValue textEditingValue) {
-                              if (textEditingValue.text == '') {
-                                return const Iterable<String>.empty();
-                              }
-                              return locations.where((String option) =>
-                                  option.contains(
-                                      textEditingValue.text.toLowerCase()));
-                            },
-                            onSelected: (String selection) {
-                              print('You just selected $selection');
-                              int key = locationsList.firstWhere((element) =>
-                                  element['LocalizedName'] == selection);
-                              setState(() {
-                                key = key;
-                              });
-                            },
+                          Text(locations[selectedCity],
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 36)),
+                          const SizedBox(
+                            height: 20,
                           ),
+                          Image.asset(
+                            getImage(),
+                            width: 240,
+                            height: 240,
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Text(weather.description,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: Colors.white24, fontSize: 30)),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Text("${weather.temperature}°C",
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 44)),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Text("${weather.humidity}% Humidity",
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 24)),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          ElevatedButton(
+                              onPressed: changeCity,
+                              child: const Text("Next City"))
                         ],
-                      ))));
+                      )))));
   }
 }
